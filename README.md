@@ -25,8 +25,8 @@ The dataset used in this project is `Musical_instruments_reviews.csv`. The first
 
 ## Steps
 
-1. Load the Dataset
-   The dataset is loaded using pandas:
+1.Load the Dataset
+The dataset is loaded using pandas:
 
 ```python
 import pandas as pd
@@ -35,8 +35,8 @@ data = pd.read_csv('./data/Musical_instruments_reviews.csv')
 data = data.head(1000)
 ```
 
-1. Sentiment Analysis
-   Using the VADER sentiment analysis tool, sentiment scores for each review are calculated and stored in a dictionary:
+2.Sentiment Analysis
+Using the VADER sentiment analysis tool, sentiment scores for each review are calculated and stored in a dictionary:
 
 ```python
 from nltk.sentiment import SentimentIntensityAnalyzer
@@ -53,8 +53,8 @@ vaders = vaders.reset_index().rename(columns={'index':'id'})
 vaders = vaders.merge(data, how='left')
 ```
 
-1. Visualize the Results
-   Sentiment scores are visualized using seaborn bar plots:
+3.Visualize the Results
+Sentiment scores are visualized using seaborn bar plots:
 
 ```python
 import matplotlib.pyplot as plt
