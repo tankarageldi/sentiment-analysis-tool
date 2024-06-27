@@ -19,8 +19,7 @@ for i, row in data.iterrows():
 vaders = pd.DataFrame(arr).T
 vaders = vaders.reset_index().rename(columns={'index':'id'})
 vaders = vaders.merge(data,how='left')
-# Save the model
-vaders.to_csv('./data/vaders.csv', index=False)
+
 fig,axs = plt.subplots(1,3,figsize=(15,5))
 sns.barplot(data=vaders,x='score',y='pos',ax=axs[0])
 sns.barplot(data=vaders,x='score',y='neu',ax=axs[1])
